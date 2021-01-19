@@ -16,13 +16,13 @@ const Incoming = () => (
     <SEO title="Incoming Packages" />
     <h1>Incoming Packages</h1>
     <select>
-      {groups.map(member => <option>{member}</option>)}
+      {groups.map((member, i) => <option key={i}>{member}</option>)}
     </select>
 
     <table>
       <tr><th>Sender</th><th>Tracking Number</th><th>Status</th><th>Received</th></tr>
       {packagesSent.map((pkg, i) => 
-      <tr><td>{pkg.recipient}</td>
+      <tr key={i}><td>{pkg.recipient}</td>
           <td>{pkg.tracking}</td>
           <td>{pkg.status}</td>
           <td>{(i%2===0?"X":"")}</td></tr>
