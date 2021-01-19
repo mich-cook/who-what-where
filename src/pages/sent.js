@@ -24,12 +24,12 @@ const Sent = () => (
     <SEO title="Packages Sent" />
     <h1>Packages Sent</h1>
     <select>
-      {groups.map(member => <option>{member}</option>)}
+      {groups.map((member, i) => <option key={i}>{member}</option>)}
     </select>
 
     <table>
       <tr><th>Recipient</th><th>Tracking Number</th><th>Status</th></tr>
-      {packagesSent.map(pkg => <tr><td>{pkg.recipient}</td><td>{pkg.tracking}</td><td>{pkg.status}</td></tr>)}
+      {packagesSent.map((pkg, i) => <tr key={i}><td>{pkg.recipient}</td><td>{pkg.tracking}</td><td>{pkg.status}</td></tr>)}
     </table>
   </Layout>
 );
