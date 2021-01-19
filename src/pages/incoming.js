@@ -20,13 +20,22 @@ const Incoming = () => (
     </select>
 
     <table>
-      <tr><th>Sender</th><th>Tracking Number</th><th>Status</th><th>Received</th></tr>
+      <thead>
+        <tr>
+          <th>Sender</th>
+          <th>Tracking Number</th>
+          <th>Status</th>
+          <th>Received</th>
+        </tr>
+      </thead>
+      <tbody>
       {packagesSent.map((pkg, i) => 
       <tr key={i}><td>{pkg.recipient}</td>
           <td>{pkg.tracking}</td>
           <td>{pkg.status}</td>
           <td>{(i%2===0?"X":"")}</td></tr>
       )}
+      </tbody>
     </table>
   </Layout>
 );
