@@ -28,8 +28,16 @@ const Sent = () => (
     </select>
 
     <table>
-      <tr><th>Recipient</th><th>Tracking Number</th><th>Status</th></tr>
-      {packagesSent.map((pkg, i) => <tr key={i}><td>{pkg.recipient}</td><td>{pkg.tracking}</td><td>{pkg.status}</td></tr>)}
+      <thead>
+        <tr>
+          <th>Recipient</th>
+          <th>Tracking Number</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {packagesSent.map((pkg, i) => <tr key={i}><td>{pkg.recipient}</td><td>{pkg.tracking}</td><td>{pkg.status}</td></tr>)}
+      </tbody>
     </table>
   </Layout>
 );
